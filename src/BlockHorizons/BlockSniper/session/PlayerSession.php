@@ -76,7 +76,7 @@ class PlayerSession extends Session implements JsonSerializable{
 			if($vector3->y >= World::Y_MAX or $vector3->y <= 0){
 				return Position::fromObject($lastVec3, $world);
 			}
-			if(!$world->isChunkLoaded($vector3->x >> 4, $vector3->z >> 4) or !$world->getChunk($vector3->x >> 4, $vector3->z >> 4)->isGenerated()){
+			if(!$world->isChunkLoaded($vector3->x >> 4, $vector3->z >> 4) or !$world->isChunkGenerated($vector3->x >> 4, $vector3->z >> 4)){
 				return Position::fromObject($lastVec3, $world);
 			}
 			if(!($world->getBlockAt($vector3->x, $vector3->y, $vector3->z) instanceof Air)){
