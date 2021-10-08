@@ -11,8 +11,8 @@ use BlockHorizons\BlockSniper\parser\Parser;
 use JsonSerializable;
 use pocketmine\block\Block;
 use pocketmine\block\VanillaBlocks;
+use pocketmine\data\bedrock\BiomeIds;
 use pocketmine\Server;
-use pocketmine\world\biome\Biome;
 
 /**
  * Class BrushProperties holds all properties used by BrushTypes and BrushShapes. They may be applied using the Brush
@@ -92,7 +92,7 @@ class BrushProperties implements JsonSerializable{
 	 *
 	 * @var int
 	 */
-	public $biomeId = Biome::PLAINS;
+	public $biomeId = BiomeIds::PLAINS;
 	/**
 	 * tree holds properties specifically used by the tree type brush.
 	 *
