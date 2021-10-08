@@ -98,7 +98,7 @@ class BrushListener implements Listener{
 			default:
 				return;
 		}
-		$event->setCancelled();
+		$event->cancel();
 	}
 
 	private function useBrush(PlayerSession $session, Brush $brush, Player $player) : void{
