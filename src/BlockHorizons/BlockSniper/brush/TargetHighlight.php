@@ -13,8 +13,8 @@ use pocketmine\event\entity\EntityDamageEvent;
 use pocketmine\nbt\tag\CompoundTag;
 use pocketmine\nbt\tag\FloatTag;
 use pocketmine\nbt\tag\ListTag;
-use pocketmine\uuid\UUID;
 use pocketmine\world\Position;
+use Ramsey\Uuid\UuidFactory;
 use function chr;
 use function json_encode;
 use function round;
@@ -48,7 +48,7 @@ class TargetHighlight extends Human{
 			self::$emptySkin = str_repeat(chr(0) . chr(0) . chr(0) . chr(255), 32 * 64);
 		}
 		$this->skin = new Skin(
-			UUID::fromRandom()->toString(),
+			(new UuidFactory())->uuid4()->toString(),
 			self::$emptySkin,
 			"",
 			self::GEOMETRY_NAME,
