@@ -83,7 +83,7 @@ class BrushListener implements Listener{
 				$session = SessionManager::getPlayerSession($player);
 				$this->useBrush($session, $session->getBrush(), $player);
 				break;
-			case $hand->getNamedTag()->hasTag(self::KEY_BRUSH_UUID, StringTag::class):
+			case $hand->getNamedTag()->getTag(self::KEY_BRUSH_UUID) instanceof StringTag:
 				$uuid = $hand->getNamedTag()->getString(self::KEY_BRUSH_UUID);
 				$session = SessionManager::getPlayerSession($player);
 				if(!isset(self::$brushItems[$uuid])){
@@ -263,7 +263,7 @@ class BrushListener implements Listener{
 		$brushItem = $this->loader->config->brushItem->parse();
 		$name = $player->getName();
 		$hand = $player->getInventory()->getItemInHand();
-		if(!$hand->equals($brushItem) && !$hand->getNamedTag()->hasTag(BrushListener::KEY_BRUSH_UUID, StringTag::class)){
+		if(!$hand->equals($brushItem) && !$hand->getNamedTag()->getTag(BrushListener::KEY_BRUSH_UUID) instanceof StringTag){
 			if(isset($this->targetHighlights[$name])){
 				// The player still had a target highlight entity active, so we need to remove that as the player
 				// is no longer holding the brush item.
