@@ -26,7 +26,7 @@ class ExpandType extends Type{
 			if($block instanceof Air){
 				$closedSides = 0;
 				foreach(Facing::ALL as $direction){
-					$sideBlock = $this->side($block->getPos(), $direction);
+					$sideBlock = $this->side($block->getPosition(), $direction);
 					if(!($sideBlock instanceof Air)){
 						$closedSides++;
 					}
@@ -38,7 +38,7 @@ class ExpandType extends Type{
 		}
 		foreach($undoBlocks as $selectedBlock){
 			yield $selectedBlock;
-			$this->putBlock($selectedBlock->getPos(), $this->randomBrushBlock());
+			$this->putBlock($selectedBlock->getPosition(), $this->randomBrushBlock());
 		}
 	}
 

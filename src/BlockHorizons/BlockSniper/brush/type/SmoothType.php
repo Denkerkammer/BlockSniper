@@ -23,7 +23,7 @@ class SmoothType extends Type{
 			if($block instanceof Air){
 				$closedSides = 0;
 				foreach(Facing::ALL as $direction){
-					$sideBlock = $this->side($block->getPos(), $direction);
+					$sideBlock = $this->side($block->getPosition(), $direction);
 					if(!($sideBlock instanceof Air)){
 						$closedSides++;
 					}
@@ -35,7 +35,7 @@ class SmoothType extends Type{
 			}
 			$openSides = 0;
 			foreach(Facing::ALL as $direction){
-				if($this->side($block->getPos(), $direction) instanceof Air){
+				if($this->side($block->getPosition(), $direction) instanceof Air){
 					$openSides++;
 				}
 			}
@@ -45,11 +45,11 @@ class SmoothType extends Type{
 		}
 		foreach($meltBlocks as $block){
 			yield $block;
-			$this->delete($block->getPos());
+			$this->delete($block->getPosition());
 		}
 		foreach($expandBlocks as $block){
 			yield $block;
-			$this->putBlock($block->getPos(), $this->randomBrushBlock());
+			$this->putBlock($block->getPosition(), $this->randomBrushBlock());
 		}
 	}
 

@@ -21,8 +21,8 @@ class SyncRevert extends Revert{
 	public function restore() : Revert{
 		$oldBlocks = [];
 		foreach($this->blocks as $block){
-			$oldBlocks[] = $this->getWorld()->getBlock($block->getPos());
-			$this->getWorld()->setBlock($block->getPos(), $block, false);
+			$oldBlocks[] = $this->getWorld()->getBlock($block->getPosition());
+			$this->getWorld()->setBlock($block->getPosition(), $block, false);
 		}
 
 		return new SyncRevert($oldBlocks, $this->getWorld());

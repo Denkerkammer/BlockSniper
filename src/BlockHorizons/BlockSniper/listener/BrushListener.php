@@ -138,7 +138,7 @@ class BrushListener implements Listener{
 		}
 
 		$selection = ($session = SessionManager::getPlayerSession($player))->getSelection();
-		$vec = $block->getPos()->asVector3();
+		$vec = $block->getPosition()->asVector3();
 		[$x, $y, $z] = [$vec->x, $vec->y, $vec->z];
 		switch($action){
 			case PlayerInteractEvent::RIGHT_CLICK_BLOCK:

@@ -20,13 +20,13 @@ class FlattenAllType extends Type{
 	 */
 	public function fill() : Generator{
 		foreach($this->blocks as $block){
-			if($block->getPos()->y <= $this->target->y && ($block instanceof Air || $block instanceof Flowable)){
+			if($block->getPosition()->y <= $this->target->y && ($block instanceof Air || $block instanceof Flowable)){
 				yield $block;
-				$this->putBlock($block->getPos(), $this->randomBrushBlock());
+				$this->putBlock($block->getPosition(), $this->randomBrushBlock());
 			}
-			if($block->getPos()->y > $this->target->y && !($block instanceof Air)){
+			if($block->getPosition()->y > $this->target->y && !($block instanceof Air)){
 				yield $block;
-				$this->delete($block->getPos());
+				$this->delete($block->getPosition());
 			}
 		}
 	}

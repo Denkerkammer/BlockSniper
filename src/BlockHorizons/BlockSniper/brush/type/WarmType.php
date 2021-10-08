@@ -20,15 +20,15 @@ class WarmType extends Type{
 			switch($block->getId()){
 				case BlockLegacyIds::ICE:
 					yield $block;
-					$this->putBlock($block->getPos(), VanillaBlocks::WATER());
+					$this->putBlock($block->getPosition(), VanillaBlocks::WATER());
 					break;
 				case BlockLegacyIds::SNOW_LAYER:
 					yield $block;
-					$this->delete($block->getPos());
+					$this->delete($block->getPosition());
 					break;
 				case BlockLegacyIds::PACKED_ICE:
 					yield $block;
-					$this->putBlock($block->getPos(), VanillaBlocks::ICE());
+					$this->putBlock($block->getPosition(), VanillaBlocks::ICE());
 			}
 		}
 	}

@@ -27,10 +27,10 @@ class TopLayerType extends Type{
 
 			$higherBlock = $block;
 			for($y = $block->y; $y <= $block->y + $this->properties->layerWidth; $y++){
-				$higherBlock = $this->side($higherBlock->getPos(), Facing::UP);
+				$higherBlock = $this->side($higherBlock->getPosition(), Facing::UP);
 				if($higherBlock instanceof Flowable || $higherBlock instanceof Air){
 					yield $block;
-					$this->putBlock($block->getPos(), $this->randomBrushBlock());
+					$this->putBlock($block->getPosition(), $this->randomBrushBlock());
 					break;
 				}
 			}

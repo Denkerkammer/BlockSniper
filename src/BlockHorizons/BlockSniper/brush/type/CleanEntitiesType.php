@@ -23,7 +23,7 @@ class CleanEntitiesType extends Type{
 	protected function fill() : Generator{
 		foreach($this->blocks as $block){
 			/** @var Entity $entity */
-			foreach($block->getPos()->getWorld()->getNearbyEntities(new AxisAlignedBB($block->getPos()->x, $block->getPos()->y, $block->getPos()->z, $block->getPos()->x + 1, $block->getPos()->y + 1, $block->getPos()->z + 1)) as $entity){
+			foreach($block->getPosition()->getWorld()->getNearbyEntities(new AxisAlignedBB($block->getPosition()->x, $block->getPosition()->y, $block->getPosition()->z, $block->getPosition()->x + 1, $block->getPosition()->y + 1, $block->getPosition()->z + 1)) as $entity){
 				if(!($entity instanceof Player)){
 					$entity->flagForDespawn();
 				}
