@@ -86,6 +86,93 @@
 		"blocksniper.paste.schematic": {
 			"default": "op",
 			"description": "Allows access to the schematic paste type."
+		},
+		"blocksniper.shape.sphere": {
+			"default": "op"
+		},
+		"blocksniper.shape.cube": {
+			"default": "op"
+		},
+		"blocksniper.shape.cuboid": {
+			"default": "op"
+		},
+		"blocksniper.shape.cylinder": {
+			"default": "op"
+		},
+		"blocksniper.shape.ellipsoid": {
+			"default": "op"
+		},
+		"blocksniper.type.biome": {
+			"default": "op"
+		},
+		"blocksniper.type.cleanentities": {
+			"default": "op"
+		},
+		"blocksniper.type.clean": {
+			"default": "op"
+		},
+		"blocksniper.type.drain": {
+			"default": "op"
+		},
+		"blocksniper.type.expand": {
+			"default": "op"
+		},
+		"blocksniper.type.fill": {
+			"default": "op"
+		},
+		"blocksniper.type.flattenall": {
+			"default": "op"
+		},
+		"blocksniper.type.flatten": {
+			"default": "op"
+		},
+		"blocksniper.type.layer": {
+			"default": "op"
+		},
+		"blocksniper.type.leafblower": {
+			"default": "op"
+		},
+		"blocksniper.type.melt": {
+			"default": "op"
+		},
+		"blocksniper.type.overlay": {
+			"default": "op"
+		},
+		"blocksniper.type.replaceall": {
+			"default": "op"
+		},
+		"blocksniper.type.replace": {
+			"default": "op"
+		},
+		"blocksniper.type.snowcone": {
+			"default": "op"
+		},
+		"blocksniper.type.toplayer": {
+			"default": "op"
+		},
+		"blocksniper.type.tree": {
+			"default": "op"
+		},
+		"blocksniper.type.regenerate": {
+			"default": "op"
+		},
+		"blocksniper.type.freeze": {
+			"default": "op"
+		},
+		"blocksniper.type.warm": {
+			"default": "op"
+		},
+		"blocksniper.type.heat": {
+			"default": "op"
+		},
+		"blocksniper.type.smooth": {
+			"default": "op"
+		},
+		"blocksniper.type.replacetarget": {
+			"default": "op"
+		},
+		"blocksniper.type.plant": {
+			"default": "op"
 		}
 	}
 }
