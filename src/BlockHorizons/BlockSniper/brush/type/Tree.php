@@ -145,9 +145,9 @@ class Tree{
 
 		$branchWidth = $this->trunkWidth;
 
-		$direction = $branchPos->subtract($branchEnd)->normalize();
+		$direction = $branchPos->subtract($branchEnd->x, $branchEnd->y, $branchEnd->z)->normalize();
 		for($i = 0; $i < $this->maxBranchLength; $i++){
-			$branchPos = $branchPos->add($direction);
+			$branchPos = $branchPos->add($direction->x, $direction->y, $direction->z);
 
 			$minX = $branchPos->x - $branchWidth / 2;
 			$minZ = $branchPos->z - $branchWidth / 2;

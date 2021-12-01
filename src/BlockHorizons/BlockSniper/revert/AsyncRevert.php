@@ -17,10 +17,10 @@ class AsyncRevert extends Revert{
 	public function __construct(array $currentlyPresentChunks, array $chunksToBePlacedBack, World $world){
 		parent::__construct($world);
 		foreach($currentlyPresentChunks as $index => $chunk){
-			$this->currentlyPresentChunks[] = FastChunkSerializer::serialize($chunk);
+			$this->currentlyPresentChunks[] = FastChunkSerializer::serializeTerrain($chunk);
 		}
 		foreach($chunksToBePlacedBack as $index => $chunk){
-			$this->chunksToBePlacedBack[] = FastChunkSerializer::serialize($chunk);
+			$this->chunksToBePlacedBack[] = FastChunkSerializer::serializeTerrain($chunk);
 		}
 	}
 
@@ -43,7 +43,7 @@ class AsyncRevert extends Revert{
 	private function decodeChunks(array $rawChunks) : array{
 		$chunks = [];
 		foreach($rawChunks as $index => $chunk){
-			$chunks[$index] = FastChunkSerializer::deserialize($chunk);
+			$chunks[$index] = FastChunkSerializer::deserializeTerrain($chunk);
 		}
 
 		return $chunks;

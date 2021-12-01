@@ -9,6 +9,7 @@ use BlockHorizons\BlockSniper\brush\Target;
 use BlockHorizons\BlockSniper\brush\Type;
 use Generator;
 use pocketmine\world\Position;
+use pocketmine\world\World;
 
 /*
  * Grows a custom tree on the target block.
@@ -21,6 +22,7 @@ class TreeType extends Type{
 
 	public function __construct(BrushProperties $properties, Target $target, Generator $blocks = null){
 		parent::__construct($properties, $target, $blocks);
+		assert($target->getChunkManager() instanceof World);
 		$this->tree = new Tree(Position::fromObject($target->asVector3(), $target->getChunkManager()), $properties, $this);
 	}
 

@@ -37,10 +37,11 @@ class RegenerateType extends Type{
 		$z = $this->target->z >> 4;
 
 		$oldChunk = $this->chunkManager->getChunk($x, $z);
-		$c = new Chunk($x, $z);
+		$c = new Chunk();
 		$this->chunkManager->setChunk($x, $z, $c);
 
-		$this->chunkManager->populateChunk($x, $z, true);
+		$this->chunkManager->generateChunkCallback($x, $z, $c);
+		$this->chunkManager->requestChunkPopulation($x, $z, null);
 
 		$this->session->getRevertStore()->saveUndo(new AsyncRevert([$c], [$oldChunk], $this->chunkManager));
 
