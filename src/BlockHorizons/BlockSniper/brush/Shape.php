@@ -6,6 +6,7 @@ namespace BlockHorizons\BlockSniper\brush;
 
 use Generator;
 use pocketmine\math\AxisAlignedBB;
+use polyfill\PolyfillAxisAlignedBB;
 use pocketmine\math\Vector3;
 use pocketmine\world\ChunkManager;
 use pocketmine\world\format\io\FastChunkSerializer;
@@ -15,7 +16,7 @@ use pocketmine\world\World;
  * Class Shape implements the basic behaviour of shapes. It holds a couple of convenience methods which may be used to
  * make processing them easier.
  */
-abstract class Shape extends AxisAlignedBB{
+abstract class Shape extends PolyfillAxisAlignedBB{
 
 	/** @var Vector3 */
 	protected $centre;
